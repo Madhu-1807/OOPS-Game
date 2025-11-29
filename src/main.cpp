@@ -1,6 +1,5 @@
 #include <raylib.h>
 #include "game.hpp"
-#include "obstacle.hpp"
 
 int main() 
 {
