@@ -20,16 +20,25 @@ void MysteryShip::Spawn()
     position.x = 0;
     speed = 3;
   } else {
-    position.x = GetScreenWidth() - image.width;
+    position.x = GetScreenWidth() - image.width - 25;
     speed = -3;
   }
   alive = true;
 }
 
+Rectangle MysteryShip::getRect()
+{
+    if(alive){
+        return {position.x, position.y, float(image.width), float(image.height)};
+    } else {
+        return {position.x, position.y, 0, 0};
+    }
+}
+
 void MysteryShip::Update(){
   if(alive) {
     position.x += speed;
-    if(position.x > GetScreenWidth() - image.width || position.x < 0) {
+    if(position.x > GetScreenWidth() - image.width - 25 || position.x < 25) {
       alive = false;
     }
   }
