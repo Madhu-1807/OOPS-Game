@@ -4,7 +4,7 @@ Spaceship::Spaceship()
 {
   image = LoadTexture("Graphics/spaceship.png");
   position.x = (GetScreenWidth() - image.width)/2;
-  position.y = GetScreenHeight() - image.height;
+  position.y = GetScreenHeight() - image.height - 100;
   lastFireTime = 0.0;
   laserSound = LoadSound("Sounds/laser.ogg");
 }
